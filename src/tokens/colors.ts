@@ -1,15 +1,15 @@
 // B.Nye Retail Media Dashboard — design tokens
 
 export const bg = {
-  base: '#1E1A2E',
+  base: '#FAFBFC',
 }
 
 export const glass = {
-  card: 'rgba(255, 255, 255, 0.05)',
-  cardBorder: 'rgba(255, 255, 255, 0.10)',
-  blur: 'blur(14px)',
+  card: 'rgba(255, 255, 255, 0.95)',
+  cardBorder: 'rgba(0, 0, 0, 0.06)',
+  blur: 'none',
 }
 
 export const semantic = {
-  muted: '#AFADAD',
+  muted: '#6B7280',
 }

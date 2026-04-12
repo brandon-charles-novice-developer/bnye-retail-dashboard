@@ -21,8 +21,8 @@ export function SalesLiftChart() {
       <AreaChart data={data} margin={{ top: 4, right: 8, left: -8, bottom: 0 }}>
         <defs>
           <linearGradient id="rateGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#4C1D95" stopOpacity={0.3} />
-            <stop offset="100%" stopColor="#4C1D95" stopOpacity={0} />
+            <stop offset="0%" stopColor="#7C3AED" stopOpacity={0.3} />
+            <stop offset="100%" stopColor="#7C3AED" stopOpacity={0} />
           </linearGradient>
         </defs>
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
@@ -32,8 +32,8 @@ export function SalesLiftChart() {
           contentStyle={{ background: 'rgba(255,255,255,0.95)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 8, fontSize: 12, color: '#1A1A2E', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
           formatter={(value) => [`${Number(value).toFixed(1)}%`]}
         />
-        <ReferenceLine y={2.8} stroke="#1E3A5F" strokeDasharray="6 4" strokeOpacity={0.6} />
-        <Area type="monotone" dataKey="rate" stroke="#4C1D95" strokeWidth={2} fill="url(#rateGradient)" dot={false} activeDot={{ r: 4, fill: '#4C1D95' }} />
+        <ReferenceLine y={2.8} stroke="#4338CA" strokeDasharray="6 4" strokeOpacity={0.6} />
+        <Area type="monotone" dataKey="rate" stroke="#7C3AED" strokeWidth={2} fill="url(#rateGradient)" dot={false} activeDot={{ r: 4, fill: '#7C3AED' }} />
       </AreaChart>
     </ResponsiveContainer>
   );

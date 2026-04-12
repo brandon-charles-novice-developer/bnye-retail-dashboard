@@ -10,15 +10,15 @@ import {
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { nodes as rawNodes, edges as rawEdges } from '../../data/architecture'
-import { bg, glass, semantic } from '../../tokens/colors'
+import { glass, semantic } from '../../tokens/colors'
 import { useFadeIn } from '../../hooks/useFadeIn'
 
 const CATEGORY_COLOR: Record<string, string> = {
-  'data-source':    '#3B82F6',
-  'processing':     '#10B981',
-  'mode':           '#C4B5FD',
-  'visualization':  '#F59E0B',
-  'output':         '#22C55E',
+  'data-source':    '#2563EB',
+  'processing':     '#059669',
+  'mode':           '#7C3AED',
+  'visualization':  '#D97706',
+  'output':         '#16A34A',
 }
 
 const STATUS_DOT: Record<string, { color: string; glow: string; pulse: boolean }> = {
@@ -53,14 +53,13 @@ function GlassNode({ data }: { data: any }) {
     <div
       style={{
         width: 178,
-        background: glass.card,
-        backdropFilter: glass.blur,
-        WebkitBackdropFilter: glass.blur,
+        background: 'rgba(255, 255, 255, 0.95)',
         border: `1px solid ${glass.cardBorder}`,
         borderLeft: `3px solid ${accent}`,
         borderRadius: 10,
         padding: '10px 12px',
         cursor: 'pointer',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
       }}
     >
       <Handle type="target" position={Position.Left} style={{ background: accent, width: 6, height: 6, border: 'none' }} />
@@ -68,7 +67,7 @@ function GlassNode({ data }: { data: any }) {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
         <StatusDot status={data.status} />
-        <span style={{ color: '#fff', fontSize: 12, fontWeight: 600, lineHeight: 1.2 }}>{data.label}</span>
+        <span style={{ color: '#1A1A2E', fontSize: 12, fontWeight: 600, lineHeight: 1.2 }}>{data.label}</span>
       </div>
 
       <p style={{ color: semantic.muted, fontSize: 10, lineHeight: 1.35, margin: 0 }}>
@@ -98,9 +97,9 @@ function GlassNode({ data }: { data: any }) {
 const nodeTypes = { custom: GlassNode }
 
 const defaultEdgeOptions = {
-  style: { stroke: 'rgba(255,255,255,0.18)', strokeWidth: 1.5 },
-  labelStyle: { fill: 'rgba(255,255,255,0.5)', fontSize: 9, fontWeight: 500 },
-  labelBgStyle: { fill: bg.base, fillOpacity: 0.85 },
+  style: { stroke: 'rgba(0,0,0,0.15)', strokeWidth: 1.5 },
+  labelStyle: { fill: '#4B5563', fontSize: 9, fontWeight: 500 },
+  labelBgStyle: { fill: '#FFFFFF', fillOpacity: 0.9 },
   labelBgPadding: [6, 3] as [number, number],
   labelBgBorderRadius: 4,
 }
@@ -118,10 +117,9 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
         right: 0,
         width: 300,
         height: '100%',
-        background: 'rgba(30,26,46,0.92)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderLeft: `1px solid ${glass.cardBorder}`,
+        background: 'rgba(255, 255, 255, 0.95)',
+        borderLeft: `1px solid rgba(0, 0, 0, 0.06)`,
+        boxShadow: '-2px 0 8px rgba(0, 0, 0, 0.06)',
         padding: '24px 20px',
         zIndex: 20,
         overflowY: 'auto',
@@ -131,13 +129,13 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <h3 style={{ color: '#fff', fontSize: 16, fontWeight: 700, margin: 0 }}>{d.label}</h3>
+        <h3 style={{ color: '#1A1A2E', fontSize: 16, fontWeight: 700, margin: 0 }}>{d.label}</h3>
         <button
           onClick={onClose}
           style={{
-            background: 'rgba(255,255,255,0.08)',
+            background: 'rgba(0,0,0,0.05)',
             border: 'none',
-            color: '#fff',
+            color: '#4B5563',
             width: 28,
             height: 28,
             borderRadius: 6,
@@ -156,7 +154,7 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <StatusDot status={d.status} />
-        <span style={{ color: '#fff', fontSize: 12, textTransform: 'capitalize' }}>{d.status}</span>
+        <span style={{ color: '#1A1A2E', fontSize: 12, textTransform: 'capitalize' }}>{d.status}</span>
       </div>
 
       <span
@@ -178,16 +176,16 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
 
       {d.tools && d.tools.length > 0 && (
         <div>
-          <h4 style={{ color: 'rgba(255,255,255,0.6)', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tools</h4>
+          <h4 style={{ color: '#6B7280', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tools</h4>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
             {d.tools.map((t: string) => (
               <span
                 key={t}
                 style={{
                   fontSize: 10,
-                  color: '#fff',
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(255,255,255,0.10)',
+                  color: '#1A1A2E',
+                  background: 'rgba(0,0,0,0.04)',
+                  border: '1px solid rgba(0,0,0,0.08)',
                   padding: '3px 7px',
                   borderRadius: 4,
                   fontFamily: 'monospace',
@@ -202,7 +200,7 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
 
       {d.connections && d.connections.length > 0 && (
         <div>
-          <h4 style={{ color: 'rgba(255,255,255,0.6)', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Connections</h4>
+          <h4 style={{ color: '#6B7280', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Connections</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {d.connections.map((c: string) => (
               <span key={c} style={{ fontSize: 11, color: semantic.muted }}>
@@ -245,14 +243,14 @@ export default function ArchitectureView() {
         minZoom={0.3}
         maxZoom={2}
       >
-        <Background color="rgba(255,255,255,0.04)" gap={20} size={1} />
+        <Background color="rgba(0,0,0,0.03)" gap={20} size={1} />
         <Controls
           showInteractive={false}
           style={{
-            background: 'rgba(30,26,46,0.8)',
-            border: `1px solid ${glass.cardBorder}`,
+            background: 'rgba(255,255,255,0.95)',
+            border: `1px solid rgba(0,0,0,0.06)`,
             borderRadius: 8,
-            backdropFilter: 'blur(12px)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}
         />
       </ReactFlow>
