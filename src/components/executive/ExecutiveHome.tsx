@@ -10,7 +10,7 @@ export function ExecutiveHome() {
       {/* KPI Scoreboard */}
       <section>
         <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Agency Performance</p>
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-4 gap-3">
           {agencyKpis.map((kpi, i) => (
             <MetricCard key={kpi.id} label={kpi.label} value={kpi.value} format={kpi.format} delta={kpi.delta} deltaPositive={kpi.deltaPositive} delay={i * 100} />
           ))}
@@ -21,9 +21,7 @@ export function ExecutiveHome() {
       <section className="grid grid-cols-2 gap-6">
         <div className="glass-card p-6">
           <p className="text-[var(--step--2)] text-accent uppercase tracking-wider mb-2">Impact Brief</p>
-          <h3 className="text-[var(--step-1)] font-semibold text-text-primary mb-3">{agency.impactBrief.headline}</h3>
-          <p className="text-[var(--step--1)] text-text-secondary leading-relaxed mb-4">{agency.impactBrief.body}</p>
-          <p className="text-[var(--step--2)] text-accent font-medium">{agency.impactBrief.action}</p>
+          <h3 className="text-[var(--step-1)] font-semibold text-text-primary">{agency.impactBrief.headline}</h3>
         </div>
         <div className="glass-card p-6">
           <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Blended Conversion Rate</p>

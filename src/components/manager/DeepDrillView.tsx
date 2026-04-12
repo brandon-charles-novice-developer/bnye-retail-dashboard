@@ -37,16 +37,15 @@ export function AdGroupView() {
       <section>
         <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Packages</p>
         <div className="glass-card overflow-hidden">
-          <div className="grid grid-cols-6 gap-4 px-5 py-3 border-b border-black/6">
-            {['Package', 'Environment', 'Format', 'Budget', 'CPM', 'Conv. Rate'].map(h => (
+          <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
+            {['Package', 'Format', 'Budget', 'CPM', 'Conv. Rate'].map(h => (
               <span key={h} className="text-[var(--step--2)] text-text-muted uppercase tracking-wider font-medium">{h}</span>
             ))}
           </div>
           {pkgs.map(pk => (
-            <div key={pk.id} className="drill-row grid grid-cols-6 gap-4 px-5 py-3 items-center"
+            <div key={pk.id} className="drill-row grid grid-cols-5 gap-4 px-5 py-3 items-center"
               onClick={() => navigate(`/manager/${clientId}/${campaignId}/${adGroupId}/${pk.id}`)}>
               <span className="text-[var(--step--1)] text-text-primary font-medium">{pk.name}</span>
-              <span className="text-[var(--step--2)] text-text-muted">{pk.environment}</span>
               <span className="text-[var(--step--2)] text-text-muted">{pk.format}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(pk.budget, '$')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(pk.cpm, '$full')}</span>
@@ -91,16 +90,15 @@ export function PackageView() {
       <section>
         <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Deals</p>
         <div className="glass-card overflow-hidden">
-          <div className="grid grid-cols-6 gap-4 px-5 py-3 border-b border-black/6">
-            {['Deal', 'Type', 'Publisher', 'CPM', 'Impressions', 'Viewability'].map(h => (
+          <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
+            {['Deal', 'Publisher', 'CPM', 'Impressions', 'Viewability'].map(h => (
               <span key={h} className="text-[var(--step--2)] text-text-muted uppercase tracking-wider font-medium">{h}</span>
             ))}
           </div>
           {dls.map(dl => (
-            <div key={dl.id} className="drill-row grid grid-cols-6 gap-4 px-5 py-3 items-center"
+            <div key={dl.id} className="drill-row grid grid-cols-5 gap-4 px-5 py-3 items-center"
               onClick={() => navigate(`/manager/${clientId}/${campaignId}/${adGroupId}/${packageId}/${dl.id}`)}>
               <span className="text-[var(--step--1)] text-text-primary font-medium">{dl.name}</span>
-              <span className="badge badge-on-track">{dl.dealType}</span>
               <span className="text-[var(--step--2)] text-text-muted">{dl.publisher}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(dl.cpm, '$full')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(dl.impressions, '#')}</span>

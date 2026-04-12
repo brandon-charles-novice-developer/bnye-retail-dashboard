@@ -6,6 +6,7 @@ import { ManagerHome } from './components/manager/ManagerHome';
 import { ClientView } from './components/manager/ClientView';
 import { CampaignView } from './components/manager/CampaignView';
 import { AdGroupView, PackageView, DealView } from './components/manager/DeepDrillView';
+import ArchitectureView from './components/views/ArchitectureView';
 
 function AppInner() {
   const [mode, setMode] = useState('executive');
@@ -29,6 +30,7 @@ function AppInner() {
           <Route path="/manager/:clientId/:campaignId/:adGroupId" element={<AdGroupView />} />
           <Route path="/manager/:clientId/:campaignId/:adGroupId/:packageId" element={<PackageView />} />
           <Route path="/manager/:clientId/:campaignId/:adGroupId/:packageId/:dealId" element={<DealView />} />
+          <Route path="/architecture" element={<ArchitectureView />} />
         </Routes>
       </main>
     </div>

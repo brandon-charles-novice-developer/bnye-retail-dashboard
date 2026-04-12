@@ -40,25 +40,23 @@ export function ManagerHome() {
 
         {/* Full Table */}
         <div className="glass-card overflow-hidden">
-          <div className="grid grid-cols-7 gap-4 px-5 py-3 border-b border-black/6">
-            {['Client', 'Vertical', 'Conv. Rate', 'ROAS', 'CPA', 'Revenue', 'Campaigns'].map(h => (
+          <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
+            {['Client', 'Conv. Rate', 'ROAS', 'Revenue', 'Campaigns'].map(h => (
               <span key={h} className="text-[var(--step--2)] text-text-muted uppercase tracking-wider font-medium">{h}</span>
             ))}
           </div>
           {clients.map(client => (
             <div
               key={client.id}
-              className="drill-row grid grid-cols-7 gap-4 px-5 py-3 items-center"
+              className="drill-row grid grid-cols-5 gap-4 px-5 py-3 items-center"
               onClick={() => navigate(`/manager/${client.id}`)}
             >
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full" style={{ background: client.logoColor }} />
                 <span className="text-[var(--step--1)] text-text-primary font-medium">{client.name}</span>
               </div>
-              <span className="text-[var(--step--2)] text-text-muted">{client.vertical}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(client.metrics.conversionRate, '%')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(client.metrics.newBuyerRoas, 'x')}</span>
-              <span className="text-[var(--step--1)] text-text-primary">{fmt(client.metrics.newBuyerCpa, '$full')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(client.metrics.incrementalRevenue, '$')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{client.metrics.activeCampaigns}</span>
             </div>

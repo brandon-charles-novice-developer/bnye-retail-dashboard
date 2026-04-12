@@ -32,12 +32,11 @@ export function CampaignView() {
       <p className="text-[var(--step--1)] text-text-muted">{campaign.dsp} · {campaign.buyingType} · {campaign.flightStart} → {campaign.flightEnd}</p>
 
       {/* KPIs */}
-      <div className="grid grid-cols-5 gap-3">
+      <div className="grid grid-cols-4 gap-3">
         <MetricCard label="Conv. Rate" value={campaign.metrics.conversionRate} format="%" delay={0} />
         <MetricCard label="New Buyer ROAS" value={campaign.metrics.newBuyerRoas} format="x" delay={100} />
         <MetricCard label="Impressions" value={campaign.impressions} format="#" delay={200} />
         <MetricCard label="Reach" value={campaign.reach} format="#" delay={300} />
-        <MetricCard label="Frequency" value={campaign.frequency} format="x" delay={400} />
       </div>
 
       {/* Sales Lift Chart */}

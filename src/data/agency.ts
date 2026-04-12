@@ -26,5 +26,4 @@ export const agencyKpis = [
   { id: 'roas', label: 'Blended ROAS', value: 4.2, format: 'x' as const, delta: 0.3, deltaPositive: true },
   { id: 'nbl', label: 'New Buyer Lift', value: 18.7, format: '%' as const, delta: 4.1, deltaPositive: true },
   { id: 'cvr', label: 'Avg Conv. Rate', value: 3.1, format: '%' as const, delta: -0.2, deltaPositive: false },
-  { id: 'imp', label: 'Total Impressions', value: 186_000_000, format: '#' as const, delta: 8.5, deltaPositive: true },
 ];

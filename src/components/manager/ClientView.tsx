@@ -40,28 +40,21 @@ export function ClientView() {
       <section>
         <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Campaigns</p>
         <div className="glass-card overflow-hidden">
-          <div className="grid grid-cols-7 gap-4 px-5 py-3 border-b border-black/6">
-            {['Campaign', 'Status', 'DSP', 'Budget', 'Spent', 'Pacing', 'Conv. Rate'].map(h => (
+          <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
+            {['Campaign', 'Status', 'Budget', 'Spent', 'Conv. Rate'].map(h => (
               <span key={h} className="text-[var(--step--2)] text-text-muted uppercase tracking-wider font-medium">{h}</span>
             ))}
           </div>
           {campaigns.map(campaign => (
             <div
               key={campaign.id}
-              className="drill-row grid grid-cols-7 gap-4 px-5 py-3 items-center"
+              className="drill-row grid grid-cols-5 gap-4 px-5 py-3 items-center"
               onClick={() => navigate(`/manager/${clientId}/${campaign.id}`)}
             >
               <span className="text-[var(--step--1)] text-text-primary font-medium">{campaign.name}</span>
               <StatusBadge status={campaign.pacingStatus} />
-              <span className="text-[var(--step--2)] text-text-muted">{campaign.dsp}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(campaign.budget, '$')}</span>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(campaign.spent, '$')}</span>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-1.5 rounded-full bg-black/5 overflow-hidden">
-                  <div className="h-full rounded-full bg-accent" style={{ width: `${campaign.pacing * 100}%` }} />
-                </div>
-                <span className="text-[var(--step--2)] text-text-muted">{Math.round(campaign.pacing * 100)}%</span>
-              </div>
               <span className="text-[var(--step--1)] text-text-primary">{fmt(campaign.metrics.conversionRate, '%')}</span>
             </div>
           ))}

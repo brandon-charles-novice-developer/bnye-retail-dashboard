@@ -32,8 +32,14 @@ export function Header({ mode, onModeChange }: HeaderProps) {
         </button>
       </div>
 
-      {/* Right — User + Hub Link */}
+      {/* Right — Architecture + Hub Link */}
       <div className="flex items-center gap-4">
+        <a
+          href="/architecture"
+          className="text-[var(--step--2)] text-text-muted hover:text-accent transition-colors"
+        >
+          Architecture
+        </a>
         <a
           href="/"
           className="text-[var(--step--2)] text-text-muted hover:text-accent transition-colors"
