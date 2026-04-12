@@ -51,8 +51,8 @@ export function CampaignView() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" />
-            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fontSize: 11, fill: '#9CA3AF' }} axisLine={false} tickLine={false} tickFormatter={v => fmt(v, '$')} />
+            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#1A1A2E' }} axisLine={false} tickLine={false} />
+            <YAxis tick={{ fontSize: 11, fill: '#1A1A2E' }} axisLine={false} tickLine={false} tickFormatter={v => fmt(v, '$')} />
             <Tooltip contentStyle={{ background: 'rgba(255,255,255,0.95)', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 8, fontSize: 12, color: '#1A1A2E', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }} formatter={(v) => [fmt(Number(v), '$')]} />
             <Area type="monotone" dataKey="incremental" stroke="#166534" strokeWidth={2} fill="url(#incGradient)" dot={false} />
             <Area type="monotone" dataKey="observed" stroke="#115E59" strokeWidth={1.5} fill="none" dot={false} />

@@ -11,5 +11,5 @@ export const glass = {
 }
 
 export const semantic = {
-  muted: '#6B7280',
+  muted: '#1A1A2E',
 }

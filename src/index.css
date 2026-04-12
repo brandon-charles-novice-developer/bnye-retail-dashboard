@@ -38,8 +38,8 @@
 
   /* Text */
   --text-primary: #1A1A2E;
-  --text-secondary: #4B5563;
-  --text-muted: #9CA3AF;
+  --text-secondary: #1A1A2E;
+  --text-muted: #1A1A2E;
 
   /* Surface */
   --glass-bg: rgba(255, 255, 255, 0.95);
@@ -79,21 +79,21 @@ html { scroll-behavior: smooth; }
 
 /* === GLASS CARD === */
 .glass-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 .glass-card:hover {
-  border-color: var(--glass-border-hover);
+  border-color: rgba(0,0,0,0.12);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
 
 /* === GLASS HEADER === */
 .glass-header {
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 /* === MODE TOGGLE === */
@@ -207,3 +207,7 @@ html { scroll-behavior: smooth; }
 .badge-paused { background: rgba(146, 64, 14, 0.10); color: #92400E; }
 .badge-ended { background: rgba(153, 27, 27, 0.10); color: #991B1B; }
 .badge-on-track { background: rgba(17, 94, 89, 0.10); color: #115E59; }
+
+/* === SECTION ALTERNATION === */
+main > * { background: #FAFBFC; }
+main > *:nth-child(even) { background: #F3F4F6; }

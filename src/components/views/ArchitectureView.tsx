@@ -24,7 +24,7 @@ const CATEGORY_COLOR: Record<string, string> = {
 const STATUS_DOT: Record<string, { color: string; glow: string; pulse: boolean }> = {
   running:      { color: '#22C55E', glow: 'rgba(34,197,94,0.6)',  pulse: true },
   connected:    { color: '#22C55E', glow: 'rgba(34,197,94,0.6)',  pulse: true },
-  idle:         { color: '#6B7280', glow: 'none',                  pulse: false },
+  idle:         { color: '#1A1A2E', glow: 'none',                  pulse: false },
   disconnected: { color: '#EF4444', glow: 'rgba(239,68,68,0.5)',  pulse: false },
   degraded:     { color: '#F59E0B', glow: 'rgba(245,158,11,0.5)', pulse: false },
 }
@@ -98,7 +98,7 @@ const nodeTypes = { custom: GlassNode }
 
 const defaultEdgeOptions = {
   style: { stroke: 'rgba(0,0,0,0.15)', strokeWidth: 1.5 },
-  labelStyle: { fill: '#4B5563', fontSize: 9, fontWeight: 500 },
+  labelStyle: { fill: '#1A1A2E', fontSize: 9, fontWeight: 500 },
   labelBgStyle: { fill: '#FFFFFF', fillOpacity: 0.9 },
   labelBgPadding: [6, 3] as [number, number],
   labelBgBorderRadius: 4,
@@ -135,7 +135,7 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
           style={{
             background: 'rgba(0,0,0,0.05)',
             border: 'none',
-            color: '#4B5563',
+            color: '#1A1A2E',
             width: 28,
             height: 28,
             borderRadius: 6,
@@ -176,7 +176,7 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
 
       {d.tools && d.tools.length > 0 && (
         <div>
-          <h4 style={{ color: '#6B7280', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tools</h4>
+          <h4 style={{ color: '#1A1A2E', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tools</h4>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
             {d.tools.map((t: string) => (
               <span
@@ -200,7 +200,7 @@ function DetailPanel({ node, onClose }: { node: any; onClose: () => void }) {
 
       {d.connections && d.connections.length > 0 && (
         <div>
-          <h4 style={{ color: '#6B7280', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Connections</h4>
+          <h4 style={{ color: '#1A1A2E', fontSize: 11, fontWeight: 600, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Connections</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {d.connections.map((c: string) => (
               <span key={c} style={{ fontSize: 11, color: semantic.muted }}>
