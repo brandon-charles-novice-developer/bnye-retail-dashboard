@@ -41,7 +41,7 @@ export function Header({ mode, onModeChange }: HeaderProps) {
           Architecture
         </a>
         <a
-          href="/"
+          href="https://bnye-command-center.vercel.app"
           className="text-[var(--step--2)] text-text-muted hover:text-accent transition-colors"
         >
           Command Center
