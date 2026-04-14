@@ -9,7 +9,7 @@ export function ExecutiveHome() {
     <div className="px-6 lg:px-8 2xl:px-12 py-8 max-w-[1400px] mx-auto space-y-8">
       {/* KPI Scoreboard */}
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Agency Performance</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Agency Performance</p>
         <div className="grid grid-cols-4 gap-3">
           {agencyKpis.map((kpi, i) => (
             <MetricCard key={kpi.id} label={kpi.label} value={kpi.value} format={kpi.format} delta={kpi.delta} deltaPositive={kpi.deltaPositive} delay={i * 100} />
@@ -24,14 +24,14 @@ export function ExecutiveHome() {
           <h3 className="text-[var(--step-1)] font-semibold text-text-primary">{agency.impactBrief.headline}</h3>
         </div>
         <div className="glass-card p-6">
-          <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Blended Conversion Rate</p>
+          <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Blended Conversion Rate</p>
           <SalesLiftChart />
         </div>
       </section>
 
       {/* Client Overview Table */}
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Client Portfolio</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Client Portfolio</p>
         <div className="glass-card overflow-hidden">
           <div className="grid grid-cols-6 gap-4 px-5 py-3 border-b border-black/6">
             {['Client', 'Conv. Rate', 'New Buyer ROAS', 'Revenue', 'Campaigns', 'Status'].map(h => (

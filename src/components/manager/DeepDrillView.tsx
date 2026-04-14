@@ -35,7 +35,7 @@ export function AdGroupView() {
       </div>
 
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Packages</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Packages</p>
         <div className="glass-card overflow-hidden">
           <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
             {['Package', 'Format', 'Budget', 'CPM', 'Conv. Rate'].map(h => (
@@ -88,7 +88,7 @@ export function PackageView() {
       </div>
 
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Deals</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Deals</p>
         <div className="glass-card overflow-hidden">
           <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
             {['Deal', 'Publisher', 'CPM', 'Impressions', 'Viewability'].map(h => (
@@ -141,7 +141,7 @@ export function DealView() {
       </div>
 
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Creatives</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Creatives</p>
         <div className="glass-card overflow-hidden">
           <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
             {['Creative', 'Format', 'Impressions', 'Completion', 'Conv. Rate'].map(h => (

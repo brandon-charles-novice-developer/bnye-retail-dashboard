@@ -8,7 +8,7 @@ export function ManagerHome() {
   return (
     <div className="px-6 lg:px-8 2xl:px-12 py-8 max-w-[1400px] mx-auto space-y-8">
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Campaign Manager</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Campaign Manager</p>
         <h2 className="text-[var(--step-2)] font-bold text-text-primary mb-6">Client Portfolio</h2>
 
         {/* Client Cards Grid */}

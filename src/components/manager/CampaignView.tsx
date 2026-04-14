@@ -41,7 +41,7 @@ export function CampaignView() {
 
       {/* Sales Lift Chart */}
       <div className="glass-card p-6">
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Sales Lift — Incremental Revenue</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Sales Lift — Incremental Revenue</p>
         <ResponsiveContainer width="100%" height={200}>
           <AreaChart data={campaign.metrics.salesLiftData} margin={{ top: 4, right: 8, left: -8, bottom: 0 }}>
             <defs>
@@ -62,7 +62,7 @@ export function CampaignView() {
 
       {/* Ad Groups Table */}
       <section>
-        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Ad Groups</p>
+        <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-4">Ad Groups</p>
         <div className="glass-card overflow-hidden">
           <div className="grid grid-cols-5 gap-4 px-5 py-3 border-b border-black/6">
             {['Ad Group', 'Audience', 'Size', 'Conv. Rate', 'Spend'].map(h => (
