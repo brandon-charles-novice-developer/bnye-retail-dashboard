@@ -20,7 +20,7 @@ function AppInner() {
   return (
     <div className="min-h-screen grain">
       <Header mode={mode} onModeChange={handleModeChange} />
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pt-2 pb-3">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8 2xl:px-12 pt-2 pb-3">
         <p className="text-xs leading-relaxed max-w-3xl text-text-secondary">
           <span className="text-text-muted">Why I built this — </span>
           A retail media agency managing 8 clients across 23 campaigns had no way to see both the executive summary and deal-level detail in one system. I built a dual-mode dashboard — executives see KPI tiles, operators drill through 7 hierarchical levels.

@@ -6,7 +6,7 @@ import { fmt } from '../../utils/fmt';
 
 export function ExecutiveHome() {
   return (
-    <div className="px-6 py-8 max-w-7xl mx-auto space-y-8">
+    <div className="px-6 lg:px-8 2xl:px-12 py-8 max-w-[1400px] mx-auto space-y-8">
       {/* KPI Scoreboard */}
       <section>
         <p className="text-[var(--step--2)] text-text-muted uppercase tracking-wider mb-3">Agency Performance</p>

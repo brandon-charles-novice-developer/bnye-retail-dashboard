@@ -15,7 +15,7 @@ export function ClientView() {
   if (!client) return <div className="p-8 text-text-muted">Client not found</div>;
 
   return (
-    <div className="px-6 py-8 max-w-7xl mx-auto space-y-6">
+    <div className="px-6 lg:px-8 2xl:px-12 py-8 max-w-[1400px] mx-auto space-y-6">
       <Breadcrumb crumbs={[
         { label: 'Clients', path: '/manager' },
         { label: client.name },
